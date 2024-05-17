@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { AiOutlineDollar } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -47,6 +48,19 @@ const Job = ({ job }) => {
       </div>
     </div>
   );
+};
+
+Job.propTypes = {
+  job: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    job_title: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    remote_or_onsite: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    job_type: PropTypes.string.isRequired,
+    salary: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Job;
